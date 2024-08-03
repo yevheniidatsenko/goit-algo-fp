@@ -5,9 +5,6 @@ import matplotlib.pyplot as plt
 
 class Node:
     def __init__(self, key, color="skyblue"):
-        """
-        Initialize a Node object with a key, color, and unique ID.
-        """
         self.left = None
         self.right = None
         self.val = key
@@ -32,9 +29,6 @@ def add_edges(graph, node, pos, x=0, y=0, layer=1):
 
 
 def draw_tree(tree_root, highlight_nodes=[]):
-    """
-    Draw the binary tree with node colors and labels.
-    """
     tree = nx.DiGraph()
     pos = {tree_root.id: (0, 0)}
     tree = add_edges(tree, tree_root, pos)
@@ -50,9 +44,6 @@ def draw_tree(tree_root, highlight_nodes=[]):
 
 
 def bfs(root):
-    """
-    Perform breadth-first search (BFS) traversal and return the node order.
-    """
     queue = [root]
     order = []
     while queue:
@@ -66,9 +57,6 @@ def bfs(root):
 
 
 def dfs(root):
-    """
-    Perform depth-first search (DFS) traversal and return the node order.
-    """
     stack = [root]
     order = []
     while stack:
@@ -82,9 +70,6 @@ def dfs(root):
 
 
 def assign_colors(nodes):
-    """
-    Assign a unique color to each node based on its order in the traversal.
-    """
     num_nodes = len(nodes)
     for i, node in enumerate(nodes):
         r = int(255 * (i / (num_nodes - 1)))
